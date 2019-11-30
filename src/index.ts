@@ -1,15 +1,24 @@
 
-class Test{
-    val: string;
-    constructor(options: { name: string; }){
-        this.val = options.name || '';
+const fs = require('fs');
+const path = require('path');
+const program = require('commander');
+const pkgJson = require('../package.json');
+const CWD = process.cwd();
 
-        this.init();
-    }
+program
+    .version(pkgJson.version, '-v, --version')
+    .option('-i, --init', 'init something')
+    .option('-g, --generate', 'generate something')
+    .option('-r, --remove', 'remove something')
+    .action((opt: any) => {
+        console.log('opt: ', opt);
+    })
+
+   
 
 
-    init(){
 
-        return this.val
-    }
-}
+
+
+
+program.parse(process.argv);

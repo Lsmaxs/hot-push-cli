@@ -1,7 +1,5 @@
-declare class Test {
-    val: string;
-    constructor(options: {
-        name: string;
-    });
-    init(): string;
-}
+declare const fs: any;
+declare const path: any;
+declare const program: any;
+declare const pkgJson: any;
+declare const CWD: string;
