@@ -1,0 +1,14 @@
+docs/
+test/
+examples/
+node_modules/
+~*
+config/
+src/
+*.yml
+.gitignore
+.editorconfig
+.npmrc
+static/
+.post-cdn-cache/
+tsconfig.json
