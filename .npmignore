@@ -12,3 +12,4 @@ src/
 static/
 .post-cdn-cache/
 tsconfig.json
+.zip
