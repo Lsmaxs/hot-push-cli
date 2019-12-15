@@ -13,3 +13,4 @@ static/
 .post-cdn-cache/
 tsconfig.json
 .zip
+base.json

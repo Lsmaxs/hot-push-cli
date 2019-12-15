@@ -1,6 +1,6 @@
 {
   "name": "hot-push-cli",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "main": "index.js",
   "bin": {
     "hot-push": "./index.js"
@@ -21,7 +21,6 @@
     "commander": "4.0.1",
     "copy-dir": "1.2.0",
     "fs-extra": "8.1.0",
-    "request": "^2.88.0",
-    "request-promise": "^4.2.5"
+    "request": "2.88.0"
   }
 }

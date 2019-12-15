@@ -56,3 +56,4 @@ buck-out/
 .vscode
 .zip
 hotpush.config.json
+base.json

@@ -1,21 +1,23 @@
 import utils from ".";
+import BASE_CONFIGs from '../baseConfig';
 const path = require('path');
 const fs = require('fs-extra');
 // const commander = require('commander');
 const os = require('os');
 
-const CONFIG_FILE = path.resolve('./.hotpush-base-config.json');
-const CONFIG_OPTIONLIST = ['token','env','name'];
+const CONFIG_FILE = path.join(__dirname,'../../.hotpush-base-config.json');
+const CONFIG_OPTIONLIST = ['token','env'];
 
+console.log(CONFIG_FILE)
 async function readConfig(){
     let config;
-   utils.logRed(CONFIG_FILE)
+    utils.logRed(CONFIG_FILE);
     if(!config){
         try{
             config = await fs.readJson(CONFIG_FILE);
         }catch(err){
-            config = { token:'',name:'zzc' };
-            await fs.writeJson(CONFIG_FILE,config)
+            config = BASE_CONFIGs;
+            await fs.writeJson(CONFIG_FILE,config,'utf-8')
         }
     }
 
@@ -39,6 +41,7 @@ async function setConfig(key:string,val?:string|number){
         config[key] = val;
         await fs.writeJson(CONFIG_FILE,config,'utf-8')
     }
+    utils.logGreen(`${key}设置成功`)
     return config
 
 }
